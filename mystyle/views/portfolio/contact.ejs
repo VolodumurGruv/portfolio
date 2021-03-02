@@ -1,0 +1,25 @@
+<%layout('layouts/boilerplate')%>
+
+<div class="container">
+  <div class="contacts">
+    <p>Phone number: 000000000</p>
+    <p>telegram: asdsada</p>
+    <p>e-mail: grushvolo@gmail.com</p>
+  </div>
+  <div class="popup" onclick="myRemove()">
+    Leave a message
+    <span class="popuptext" id="myPopup"> <%-include("./popup") %> </span>
+  </div>
+  <% if(msgs.length) {%> <% for(let msg of msgs) {%>
+  <div class="comment">
+    <div class="author"><%=msg.userName %></div>
+    <div class="author-text">
+      <%=msg.message%>
+      <br />
+      <span><%=msg.date%></span>
+    </div>
+  </div>
+  <%}%> <%}%>
+</div>
+
+<script src="/javascripts/popup.js"></script>

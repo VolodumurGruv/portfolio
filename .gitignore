@@ -1,4 +1,7 @@
+node_modules
 *.jpg
 *.png
 *.ico
-
+*.JPG
+.env
+connectionDB.js

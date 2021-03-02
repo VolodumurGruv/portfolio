@@ -1,0 +1,19 @@
+<%layout("layouts/boilerplate")%>
+<div class="close">
+  <button class="btn-close">X</button>
+</div>
+<div class="popup-form">
+  <form action="/contact/popup" method="POST">
+    <label class="popup-lable" for="name">Name</label>
+    <input
+      class="popup-inpt"
+      type="text"
+      name="userName"
+      placeholder="name"
+      id="name"
+    />
+    <textarea name="message" class="message" cols="40" rows="10"></textarea>
+    <button class="btn-popup">Send</button>
+  </form>
+</div>
+<!-- <script src="/javascripts/popup.js"></script> -->
