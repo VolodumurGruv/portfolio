@@ -1,5 +1,10 @@
-<%layout('layouts/boilerplate')%>
+<%layout('layouts/boilerplate')%> <% if(post && post.length) { %>
+<div class="popup-msg">
+  <span class="popup-msg-text" id="msgPopup"> <%=post%> </span>
 
+  <button class="btn-close-popupmsg">X</button>
+</div>
+<%}%>
 <div class="container">
   <div class="contacts">
     <p>Phone number: 000000000</p>

@@ -14,3 +14,10 @@ btnClose.addEventListener("click", (e) => {
   e.stopPropagation();
   if (popup.classList.contains("show")) popup.classList.remove("show");
 });
+
+const btnMsg = document.querySelector(".btn-close-popupmsg");
+const popupMsg = document.querySelector(".popup-msg");
+
+btnMsg.addEventListener("click", (e) => {
+  popupMsg.style.display = "none";
+});

@@ -1,9 +1,7 @@
 <%layout("layouts/boilerplate")%>
-<div class="close">
-  <button class="btn-close">X</button>
-</div>
+
 <div class="popup-form">
-  <form action="/contact/popup" method="POST">
+  <form action="/contact/popup" method="POST" novalidate>
     <label class="popup-lable" for="name">Name</label>
     <input
       class="popup-inpt"
@@ -11,9 +9,20 @@
       name="userName"
       placeholder="name"
       id="name"
+      required
     />
-    <textarea name="message" class="message" cols="40" rows="10"></textarea>
+    <textarea
+      name="message"
+      class="message"
+      cols="40"
+      rows="10"
+      required
+    ></textarea>
     <button class="btn-popup">Send</button>
   </form>
+  <div class="close">
+    <button class="btn-close">Close</button>
+  </div>
 </div>
-<!-- <script src="/javascripts/popup.js"></script> -->
+
+<script src="/javascripts/validation.js"></script>
