@@ -2,8 +2,6 @@ const userName = document.querySelector(".popup-inpt"),
   message = document.querySelector(".message"),
   form = document.querySelector("form");
 
-console.log(userName.value);
-
 form.addEventListener("submit", (event) => {
   if (userName.value.length >= 3) {
     userName.classList.add("success");

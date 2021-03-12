@@ -40,6 +40,15 @@ h1 {
   width: 300px;
 }
 
+a.imgbtn {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  text-decoration: none;
+  color: initial;
+}
+
 @media (max-width: 900px) {
   .container,
   .container-right {

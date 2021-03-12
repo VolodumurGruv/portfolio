@@ -7,6 +7,8 @@ const express = require("express"),
   ejsMate = require("ejs-mate"),
   session = require("express-session"),
   flash = require("connect-flash"),
+  sanitize = require("express-mongo-sanitize"),
+  helmet = require("helmet"),
   index = require("./routes/index");
 
 app.engine("ejs", ejsMate);
@@ -28,6 +30,19 @@ app.use(
 );
 
 app.use(flash());
+app.use(sanitize());
+
+app.use(
+  helmet(
+    helmet.contentSecurityPolicy({
+      directives: {
+        "default-src": ["'self'"],
+        "script-src": ["'self'"],
+        "object-src": ["'none'"],
+      },
+    })
+  )
+);
 
 app.use((req, res, next) => {
   res.locals.post = req.flash("success");
@@ -46,7 +61,7 @@ app.all("*", (req, res, next) => {
 app.use((err, req, res, next) => {
   const { status = 500 } = err;
   if (!err.message) err.message = "Oh No, Something Went Wrong!";
-  res.status(status).send(err.message);
+  res.status(status).render("error", { err });
 });
 
 const start = async () => {

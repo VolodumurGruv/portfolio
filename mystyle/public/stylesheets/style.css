@@ -1,5 +1,6 @@
 /* navbar styling */
 .navbar {
+  transition: all ease 3s;
   position: fixed;
   top: 0;
   left: 0;

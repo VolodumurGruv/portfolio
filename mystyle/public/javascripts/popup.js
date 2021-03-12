@@ -2,12 +2,13 @@
 
 const popup = document.getElementById("myPopup");
 const btnClose = document.querySelector(".btn-close");
+const popupShow = document.querySelector(".popup");
 
-function myRemove() {
+popupShow.addEventListener("click", function myRemove() {
   if (!popup.classList.contains("show")) {
     popup.classList.add("show");
   }
-}
+});
 
 btnClose.addEventListener("click", (e) => {
   e.preventDefault();
@@ -18,6 +19,8 @@ btnClose.addEventListener("click", (e) => {
 const btnMsg = document.querySelector(".btn-close-popupmsg");
 const popupMsg = document.querySelector(".popup-msg");
 
-btnMsg.addEventListener("click", (e) => {
-  popupMsg.style.display = "none";
-});
+if (btnMsg) {
+  btnMsg.addEventListener("click", (e) => {
+    popupMsg.style.display = "none";
+  });
+}
