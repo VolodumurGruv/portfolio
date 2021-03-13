@@ -4,17 +4,21 @@ const popup = document.getElementById("myPopup");
 const btnClose = document.querySelector(".btn-close");
 const popupShow = document.querySelector(".popup");
 
-popupShow.addEventListener("click", function myRemove() {
-  if (!popup.classList.contains("show")) {
-    popup.classList.add("show");
-  }
-});
+if (popupShow) {
+  popupShow.addEventListener("click", function myRemove() {
+    if (!popup.classList.contains("show")) {
+      popup.classList.add("show");
+    }
+  });
+}
 
-btnClose.addEventListener("click", (e) => {
-  e.preventDefault();
-  e.stopPropagation();
-  if (popup.classList.contains("show")) popup.classList.remove("show");
-});
+if (popup) {
+  btnClose.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (popup.classList.contains("show")) popup.classList.remove("show");
+  });
+}
 
 const btnMsg = document.querySelector(".btn-close-popupmsg");
 const popupMsg = document.querySelector(".popup-msg");

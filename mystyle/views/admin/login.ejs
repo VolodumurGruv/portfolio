@@ -1,0 +1,29 @@
+<% layout("layouts/boilerplate") %> <% if(post && post.length) { %>
+<div class="popup-msg">
+  <span class="popup-msg-text" id="msgPopup"> <%=post%> </span>
+
+  <button class="btn-close-popupmsg">X</button>
+</div>
+<%}%> <% if(nameErr && nameErr.length) { %>
+<div class="popup-msg error">
+  <span class="popup-msg-text" id="msgPopup"> <%=nameErr%> </span>
+
+  <button class="btn-close-popupmsg">X</button>
+</div>
+<%}%>
+<h1>Login</h1>
+<div class="container">
+  <form action="/admin/login" method="POST">
+    <label for="user">Admin name</label>
+    <div class="admin">
+      <input class="popup-inpt" type="text" name="username" id="user" />
+    </div>
+
+    <label for="pass">Password</label>
+    <div class="admin">
+      <input class="popup-inpt" type="password" name="password" id="pass" />
+    </div>
+
+    <button class="btn-popup">Submit</button>
+  </form>
+</div>

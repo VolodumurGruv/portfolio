@@ -7,9 +7,13 @@ const express = require("express"),
   ejsMate = require("ejs-mate"),
   session = require("express-session"),
   flash = require("connect-flash"),
+  passport = require("passport"),
+  LocalStrategy = require("passport-local"),
   sanitize = require("express-mongo-sanitize"),
   helmet = require("helmet"),
-  index = require("./routes/index");
+  index = require("./routes/index"),
+  admin = require("./routes/admin"),
+  Admin = require("./models/admin");
 
 app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
@@ -31,6 +35,12 @@ app.use(
 
 app.use(flash());
 app.use(sanitize());
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(Admin.authenticate()));
+
+passport.serializeUser(Admin.serializeUser());
+passport.deserializeUser(Admin.deserializeUser());
 
 app.use(
   helmet(
@@ -51,7 +61,9 @@ app.use((req, res, next) => {
 });
 
 //routers
+
 app.use("/", index);
+app.use("/admin", admin);
 
 // handeling with errors
 app.all("*", (req, res, next) => {

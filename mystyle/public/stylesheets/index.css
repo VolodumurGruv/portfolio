@@ -11,17 +11,17 @@
 main {
   margin-top: 80px;
   width: 90%;
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 0;
 }
 
 .container {
-  margin: 20px;
+  /* margin: 60px; */
+  margin-bottom: 10px;
   padding: 10px;
   line-height: 1.5rem;
   font-size: 1.5rem;
   display: grid;
-  grid-gap: 2vw;
+  grid-gap: 4vw;
   grid-template-columns: auto auto;
   justify-content: center;
   align-items: center;
@@ -34,6 +34,9 @@ h1 {
 .photo > img {
   width: 300px;
   border-radius: 30%;
+}
+.first > p {
+  margin-left: 60px;
 }
 
 .certificate {
@@ -53,5 +56,6 @@ a.imgbtn {
   .container,
   .container-right {
     grid-template-columns: 1fr;
+    margin: 0;
   }
 }
