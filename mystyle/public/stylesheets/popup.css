@@ -1,7 +1,6 @@
 .popup {
   position: relative;
   display: inline-block;
-  cursor: pointer;
   text-align: center;
   margin-top: 4%;
 }
@@ -11,24 +10,31 @@
 .popup .popuptext {
   visibility: hidden;
   width: 360px;
-  background-color: #555;
+
+  background-color: rgba(15, 140, 212, 0.8);
   color: #fff;
   text-align: center;
-  border-radius: 6px;
+  border-radius: 20px;
   padding: 8px 0;
-  position: absolute;
+  position: fixed;
   z-index: 1;
-  left: 15%;
-  margin-left: -80px;
+  top: 5%;
+  left: 40%;
+  /* margin-left: -80px; */
   /* margin-top: 50px; */
 }
 
+@media (max-width: 600px) {
+  .popup .popuptext {
+    left: 1%;
+  }
+}
 /* Popup arrow */
 
 .popup .popuptext::after {
   content: "";
   position: absolute;
-  top: 100%;
+  top: 10%;
   left: 50%;
   margin-left: -5px;
   border-width: 5px;
@@ -65,8 +71,14 @@
 }
 
 /* add my style*/
+.contact {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+}
 
 .popup-form {
+  display: block;
   width: 100%;
   cursor: default;
 }
@@ -111,20 +123,27 @@
 }
 
 .btn-popup {
-  list-style: none;
-  border-radius: 7%;
+  border: none;
+  border-radius: 20px;
+  outline: none;
   width: 150px;
-  height: 30px;
+  height: 50px;
   cursor: pointer;
   font-weight: bold;
-  background: rgb(19, 134, 19);
-  color: white;
+  background-color: transparent;
+  color: #cee3e9;
+  box-shadow: 5px 5px 5px rgba(79, 214, 248, 0.7);
+}
+
+.btn-popup:hover {
+  background-color: #306d80dc;
+  color: #fff;
 }
 
 div > .btn-close {
   width: 100%;
-  height: 25px;
-  border-radius: 7%;
+
+  border-radius: 20px;
   display: block;
   position: relative;
   margin-left: auto;
@@ -133,6 +152,11 @@ div > .btn-close {
   font-weight: bold;
   background: rgb(180, 29, 29);
   color: white;
+  outline: none;
+}
+
+div > .btn-close:hover {
+  background: rgb(235, 8, 8);
 }
 
 .close {

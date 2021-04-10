@@ -2,7 +2,7 @@
 
 const popup = document.getElementById("myPopup");
 const btnClose = document.querySelector(".btn-close");
-const popupShow = document.querySelector(".popup");
+const popupShow = document.querySelector(".btn-popup");
 
 if (popupShow) {
   popupShow.addEventListener("click", function myRemove() {

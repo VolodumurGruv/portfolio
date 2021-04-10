@@ -12,7 +12,6 @@ const express = require("express"),
   sanitize = require("express-mongo-sanitize"),
   helmet = require("helmet"),
   index = require("./routes/index"),
-  admin = require("./routes/admin"),
   Admin = require("./models/admin");
 
 app.engine("ejs", ejsMate);
@@ -63,7 +62,6 @@ app.use((req, res, next) => {
 //routers
 
 app.use("/", index);
-app.use("/admin", admin);
 
 // handeling with errors
 app.all("*", (req, res, next) => {

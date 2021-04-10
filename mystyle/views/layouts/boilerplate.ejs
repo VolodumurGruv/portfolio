@@ -5,18 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link rel="stylesheet" href="/stylesheets/footer.css" />
+    <!-- GOOGLEFONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MY STYLE -->
+    <link rel="stylesheet" href="/stylesheets/newstyle.css" />
+    <!-- popup -->
     <link rel="stylesheet" href="/stylesheets/popup.css" />
-    <link rel="stylesheet" href="/stylesheets/index.css" />
-    <link rel="stylesheet" href="/stylesheets/alert.css" />
-    <link rel="stylesheet" href="/stylesheets/modalpic.css" />
-    <script src="/javascripts/alert.js" defer></script>
-    <script src="/javascripts/popup.js" defer></script>
+    <!-- footer -->
+    <link rel="stylesheet" href="/stylesheets/footer.css" />
   </head>
   <body>
-    <%- include('../partials/navbar')%>
-    <main><%-body%></main>
-    <%- include("../partials/footer")%>
+    <%-body%>
+    <footer><%- include("../partials/footer") %></footer>
   </body>
 </html>

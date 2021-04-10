@@ -1,13 +1,73 @@
-<% layout('layouts/boilerplate')-%>
-<div class="container">
-  <div class="container photo">
-    <img src="/pics/IMG_1634.JPG" alt="" />
-    <div class="about-me">
-      <p>I live in Ukraine near Kyiv. I'm Self aducated person.</p>
-      <p>
-        I finished video lessons on udemy, also read books. I have basic
-        knoweldge in JavaScript, HTML, CSS, Node JS.
-      </p>
+<% layout("layouts/boilerplate") %>
+
+<section class="first">
+  <!-- <div class="photo">
+    <img src="/pics/photo1.JPG" alt="" />
+  </div> -->
+  <div>
+    <h1>Веб сайти на будь-який смак!!!</h1>
+    <div>
+      Створення сучасних веб-сайтів згідно з Вашими вимогами. Із застосуванням
+      <span> HTML5, CSS3, ES6, Node JS.</span>
+      Також можуть бути використанні такі фреймворки як
+      <span>Bootstrap, Materialize </span>
+      чи інші. Веб-сторінки будуть придатні до перегляду на будь-яких пристроях.
     </div>
   </div>
+</section>
+
+<section class="second">
+  <div class="myinfo">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum cumque quis
+    minima minus nulla nisi sunt cupiditate labore! Velit, error? Architecto
+    sequi fugiat ipsam eos, pariatur a saepe non exercitationem.
+  </div>
+</section>
+<section class="third">
+  <h1>Онлайнкурси по яким я начався</h1>
+  <div class="slider-group">
+    <div class="prev">
+      <button class="btn slider-prev">
+        <svg class="icon icon-left" width="20" height="20">
+          <use href="./pics/icons.svg#arrow-left"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="next">
+      <button class="btn slider-next">
+        <svg class="icon icon-left" width="20" height="20">
+          <use href="./pics/icons.svg#arrow-right"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="slider">
+      <div class="slider-line">
+        <img class="slider-img" src="/pics/bootcamp.jpg" alt="" />
+        <img class="slider-img" src="/pics/nodejs.jpg" alt="" />
+        <img class="slider-img" src="/pics/fullstack.jpg" alt="" />
+        <img class="slider-img" src="/pics/angular.jpg" alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+<section class="fourth">
+  <div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim alias porro
+    quae aliquam dolore accusantium, ab voluptatibus natus architecto beatae
+    officia magnam voluptatem voluptate aliquid quisquam, perspiciatis dolorem
+    commodi ipsa!
+  </div>
+</section>
+
+<div class="popup">
+  <div class="contact">
+    <button class="btn btn-popup">Contact me</button>
+  </div>
+  <span class="popuptext" id="myPopup"> <%-include("./popup") %> </span>
 </div>
+<div class="scrolling-down"></div>
+<div class="scrolling-up"></div>
+
+<script src="/javascripts/sizeDiv.js"></script>
+<script src="/javascripts/slider.js"></script>
+<script src="/javascripts/popup.js"></script>

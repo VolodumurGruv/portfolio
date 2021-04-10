@@ -1,21 +1,29 @@
-<%layout("layouts/boilerplate")%>
-
+<% layout("layouts/boilerplate") %>
 <div class="popup-form">
-  <form action="/contact/popup" method="POST" novalidate>
+  <form action="/popup" method="POST" novalidate>
     <label class="popup-lable" for="name">Name</label>
     <input
       class="popup-inpt"
       type="text"
       name="userName"
-      placeholder="name"
+      placeholder="Name"
       id="name"
+      required
+    />
+    <label class="popup-lable" for="email">Email</label>
+    <input
+      class="popup-inpt"
+      type="text"
+      name="email"
+      placeholder="Email"
+      id="email"
       required
     />
     <textarea
       name="message"
       class="message"
-      cols="40"
-      rows="10"
+      cols="17"
+      rows="5"
       required
     ></textarea>
     <button class="btn-popup">Send</button>
