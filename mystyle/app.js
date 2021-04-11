@@ -2,7 +2,7 @@ const AppError = require("./utils/error");
 
 const express = require("express"),
   app = express(),
-  runMongo = require("./connectionDB"),
+  runMongo = require("./conectMongoDB"),
   path = require("path"),
   ejsMate = require("ejs-mate"),
   session = require("express-session"),
