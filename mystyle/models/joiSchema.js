@@ -28,5 +28,8 @@ const Joi = BaseJoi.extend(extention);
 module.exports.msgJoiSchema = Joi.object({
   userName: Joi.string().alphanum().min(3).max(30).required().escapeHTML(),
   message: Joi.string().min(5).required().escapeHTML(),
-  date: Joi.string().required(),
+  email: Joi.string().email({
+    minDomainSegments: 2,
+  }),
+  date: Joi.date(),
 });

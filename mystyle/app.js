@@ -1,3 +1,4 @@
+const { admin } = require("./controllers/admin");
 const AppError = require("./utils/error");
 
 const express = require("express"),
@@ -59,9 +60,17 @@ app.use((req, res, next) => {
   next();
 });
 
+//flash success
+app.use((req, res, next) => {
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
+  next();
+});
+
 //routers
 
 app.use("/", index);
+app.use("/admin", admin);
 
 // handeling with errors
 app.all("*", (req, res, next) => {

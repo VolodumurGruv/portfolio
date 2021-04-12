@@ -1,10 +1,12 @@
 const express = require("express"),
   router = express.Router(),
-  portfolio = require("../controllers/index");
+  portfolio = require("../controllers/index"),
+  validateSchema = require("../middlewares/joiValidation");
 
 router.route("/").get(portfolio.index);
 
-router.route("/contact").get(portfolio.contact);
-router.route("/contact/popup").get(portfolio.popup);
-
+router
+  .route("/popup")
+  .get(portfolio.popup)
+  .post(validateSchema, portfolio.message);
 module.exports = router;

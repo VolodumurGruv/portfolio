@@ -1,0 +1,10 @@
+<% layout ("layouts/boilerplate") %>
+<h1>Admin panel</h1>
+<%for(msg of msgs) {%>
+<div class="container">
+  <h2><%=msg.userName%></h2>
+  <h4><%=msg.email%></h4>
+  <p><%= msg.message%></p>
+  <p><%=msg.date%></p>
+</div>
+<%}%>

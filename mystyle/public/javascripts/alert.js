@@ -8,6 +8,7 @@ const span = document.querySelector(".close-alert");
 if (span) {
   span.onclick = function () {
     modal.style.display = "none";
+    location.href = "/";
   };
 }
 
@@ -15,5 +16,7 @@ if (span) {
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
+    location.href = "/";
+    setTimeout(() => location.reload(), 300);
   }
 };

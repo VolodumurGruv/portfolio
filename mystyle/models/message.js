@@ -9,10 +9,11 @@ const msgSchema = new Schema({
     type: String,
     required: [true, "Leave a message"],
   },
-  date: {
+  email: {
     type: String,
-    required: [true, "Didn't get a date"],
+    required: [true, "Didn't get a email"],
   },
+  date: String,
 });
 
 module.exports = model("Msg", msgSchema);
