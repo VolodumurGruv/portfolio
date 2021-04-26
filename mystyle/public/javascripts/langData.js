@@ -21,6 +21,9 @@ const langData = {
 			third: {
 				"third-h1": "Онлайнкурси по яким я начався",
 			},
+			fourth: {
+				"fourth-myexamples": "Приклади моїх робіт:",
+			},
 			popup: {
 				"popup-contact": "Залиште повідомлення",
 				"popup-name": "Ім'я",
@@ -50,6 +53,10 @@ const langData = {
 			third: {
 				"third-h1": "Онлайнкурсы по которым я учился",
 			},
+			fourth: {
+				"fourth-myexamples": "Примеры моих работ:",
+			},
+
 			popup: {
 				"popup-contact": "Оставьте сообщение",
 				"popup-name": "Имя",
@@ -78,6 +85,9 @@ const langData = {
 			},
 			third: {
 				"third-h1": "Passed online courses",
+			},
+			fourth: {
+				"fourth-myexamples": "Examples of my works:",
 			},
 			popup: {
 				"popup-contact": "Contact me",
