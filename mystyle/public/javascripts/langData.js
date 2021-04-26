@@ -12,6 +12,15 @@ const langData = {
 				"first-eng-text1": "HTML5, CSS3, ES6, Node JS, Angular9.",
 				"first-eng-text2": "Bootstrap, Materialize ",
 			},
+			second: {
+				"second-myinfo":
+					"Молодший веб-розробник, що спеціалізується на розробці інтерфейсів. Базові та середні знання з декількох мов програмування, включаючи HTML5, JavaScript, CSS3, NodeJS, MySQL, Angular9. Висока здатність до уваги та деталей, вирішенню проблем і досягнення цілей.",
+				"second-myinfo1":
+					"Я пройшов кілька курсів і продовжую вдосконалювати свої навички в цьому напрямку. Я дуже люблю програмувати та створювати щось нове і хочу досягти в цьому високого рівня. Готовий попрацювати над будь-яким проектом.",
+			},
+			third: {
+				"third-h1": "Онлайнкурси по яким я начався",
+			},
 			popup: {
 				"popup-contact": "Залиште повідомлення",
 				"popup-name": "Ім'я",
@@ -32,6 +41,15 @@ const langData = {
 				"first-eng-text1": "HTML5, CSS3, ES6, Node JS, Angular9.",
 				"first-eng-text2": "Bootstrap, Materialize ",
 			},
+			second: {
+				"second-myinfo":
+					"Младший веб-розработчик, который специализируется на розработке интерфейсов. Базовые и середние знания с нескольких языков програмировання, включая HTML5, JavaScript, CSS3, NodeJS, MySQL, Angular9. Высока способность к вниманию и деталям, решению проблем и достижения целей.",
+				"second-myinfo1":
+					"Я прошол несколько курсов и продолжаю усовершенствовать свои умения в этом направлении. Я очень люблю програмировать и создовать новые современные сайты и хочу достичь в этом высокого уровня. Готов поработать над любым проектом.",
+			},
+			third: {
+				"third-h1": "Онлайнкурсы по которым я учился",
+			},
 			popup: {
 				"popup-contact": "Оставьте сообщение",
 				"popup-name": "Имя",
@@ -51,6 +69,15 @@ const langData = {
 					"or others can also be used. Web pages will be viewable on any device",
 				"first-eng-text1": "HTML5, CSS3, ES6, Node JS, Angular9.",
 				"first-eng-text2": "Bootstrap, Materialize ",
+			},
+			second: {
+				"second-myinfo":
+					"Junior Web Developer specializing in front-end development. Basic and intermediate knowledge in several programming languages including HTML5, JavaScript, CSS3, NodeJS, MySQL, Angular9. High capacity for attention to detail, problem-solving, and goal achievement.",
+				"second-myinfo1":
+					"I have taken several courses and continue to improve my skills in this area. I really like to program and create something new and I want to reach a high level in it. I'm ready to work on any project.",
+			},
+			third: {
+				"third-h1": "Passed online courses",
 			},
 			popup: {
 				"popup-contact": "Contact me",

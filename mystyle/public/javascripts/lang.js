@@ -3,8 +3,7 @@ const flags = document.querySelectorAll(".lang .icon");
 const allLang = ["uk", "en", "ru"];
 
 document.addEventListener("DOMContentLoaded", () => {
-	// const lang = navigator.language;
-	let lang = navigator.language;
+	const lang = navigator.language;
 	document.querySelectorAll("html [data-key]").forEach((item) => {
 		const key = item.getAttribute("data-key");
 		const key1 = key.split("-")[0];
@@ -30,7 +29,6 @@ selectedLang.addEventListener("change", () => {
 function changeUrlPath() {
 	// will add #lang to url
 	const lang = selectedLang.value;
-
 	location.href = `${window.location.pathname}#${lang}`;
 }
 

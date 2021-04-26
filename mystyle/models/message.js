@@ -13,7 +13,7 @@ const msgSchema = new Schema({
     type: String,
     required: [true, "Didn't get a email"],
   },
-  date: String,
+  date: Date,
 });
 
 module.exports = model("Msg", msgSchema);
