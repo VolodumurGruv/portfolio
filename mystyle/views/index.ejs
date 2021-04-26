@@ -1,73 +1,101 @@
 <% layout("layouts/boilerplate") %>
 
-<section class="first">
-  <!-- <div class="photo">
-    <img src="/pics/photo1.JPG" alt="" />
-  </div> -->
-  <div>
-    <h1>Веб сайти на будь-який смак!!!</h1>
-    <div>
-      Створення сучасних веб-сайтів згідно з Вашими вимогами. Із застосуванням
-      <span> HTML5, CSS3, ES6, Node JS.</span>
-      Також можуть бути використанні такі фреймворки як
-      <span>Bootstrap, Materialize </span>
-      чи інші. Веб-сторінки будуть придатні до перегляду на будь-яких пристроях.
-    </div>
-  </div>
+<section class="first" lang="uk">
+	<div>
+		<h1 data-key="first-h1">Веб сайти на будь-який смак!!!</h1>
+		<div>
+			<span data-key="first-text1">
+				Створення сучасних веб-сайтів згідно з Вашими вимогами. Із
+				застосуванням</span
+			>
+			<span data-key="first-eng-text1" class="bold-span">
+				HTML5, CSS3, ES6, Node JS.</span
+			>
+			<span data-key="first-text2">
+				Також можуть бути використанні такі фреймворки як
+			</span>
+			<span data-key="first-eng-text2" class="bold-span"
+				>Bootstrap, Materialize
+			</span>
+			<span data-key="first-text3">
+				чи інші. Веб-сторінки будуть придатні до перегляду на будь-яких пристроях.
+			</span>
+		</div>
+	</div>
 </section>
 
-<section class="second">
-  <div class="myinfo">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum cumque quis
-    minima minus nulla nisi sunt cupiditate labore! Velit, error? Architecto
-    sequi fugiat ipsam eos, pariatur a saepe non exercitationem.
-  </div>
+<section class="second" lang="uk">
+	<div class="myinfo" data-key="second-myinfo">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum cumque quis
+		minima minus nulla nisi sunt cupiditate labore! Velit, error? Architecto sequi
+		fugiat ipsam eos, pariatur a saepe non exercitationem.
+	</div>
 </section>
-<section class="third">
-  <h1>Онлайнкурси по яким я начався</h1>
-  <div class="slider-group">
-    <div class="prev">
-      <button class="btn-my slider-prev">
-        <svg class="icon icon-left" width="20" height="20">
-          <use href="./pics/icons.svg#arrow-left"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="next">
-      <button class="btn-my slider-next">
-        <svg class="icon icon-left" width="20" height="20">
-          <use href="./pics/icons.svg#arrow-right"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="slider">
-      <div class="slider-line">
-        <img class="slider-img" src="/pics/bootcamp.jpg" alt="" />
-        <img class="slider-img" src="/pics/nodejs.jpg" alt="" />
-        <img class="slider-img" src="/pics/fullstack.jpg" alt="" />
-        <img class="slider-img" src="/pics/angular.jpg" alt="" />
-      </div>
-    </div>
-  </div>
+<section class="third" lang="uk">
+	<h1 data-key="third-h1">Онлайнкурси по яким я начався</h1>
+	<div class="slider-group">
+		<div class="prev">
+			<button class="btn-my slider-prev">
+				<svg class="icon icon-left" width="20" height="20">
+					<use href="./pics/icons.svg#arrow-left"></use>
+				</svg>
+			</button>
+		</div>
+		<div class="next">
+			<button class="btn-my slider-next">
+				<svg class="icon icon-left" width="20" height="20">
+					<use href="./pics/icons.svg#arrow-right"></use>
+				</svg>
+			</button>
+		</div>
+		<div class="slider">
+			<div class="slider-line">
+				<img class="slider-img" src="/pics/bootcamp.jpg" alt="" />
+				<img class="slider-img" src="/pics/nodejs.jpg" alt="" />
+				<img class="slider-img" src="/pics/fullstack.jpg" alt="" />
+				<img class="slider-img" src="/pics/angular.jpg" alt="" />
+			</div>
+		</div>
+	</div>
 </section>
-<section class="fourth">
-  <div>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim alias porro
-    quae aliquam dolore accusantium, ab voluptatibus natus architecto beatae
-    officia magnam voluptatem voluptate aliquid quisquam, perspiciatis dolorem
-    commodi ipsa!
-  </div>
+<section class="fourth" lang="uk">
+	<div data-key="fourth-myexamples">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim alias porro quae
+		aliquam dolore accusantium, ab voluptatibus natus architecto beatae officia
+		magnam voluptatem voluptate aliquid quisquam, perspiciatis dolorem commodi
+		ipsa!
+	</div>
 </section>
 
 <div class="popup">
-  <div class="contact">
-    <button class="btn-my btn-popup">Contact me</button>
-  </div>
-  <span class="popuptext" id="myPopup"> <%-include("./popup") %> </span>
+	<div class="contact" lang="uk">
+		<button class="btn-my btn-popup" data-key="popup-contact">Contact me</button>
+	</div>
+	<span class="popuptext" id="myPopup"> <%-include("./popup") %> </span>
 </div>
 <div class="scrolling-down"></div>
 <div class="scrolling-up"></div>
+<div class="lang">
+	<svg class="uk-pic icon hidden" width="50" height="30">
+		<use href="./pics/icons.svg#ukraine"></use>
+	</svg>
+
+	<svg class="en-pic icon" width="50" height="30">
+		<use href="./pics/icons.svg#english"></use>
+	</svg>
+
+	<svg class="ru-pic icon hidden" width="50" height="30">
+		<use href="./pics/icons.svg#russia"></use>
+	</svg>
+	<select name="select-lang" id="select-lang">
+		<option value="en" selected>EN</option>
+		<option value="uk">UA</option>
+		<option value="ru">RU</option>
+	</select>
+</div>
 
 <script src="/javascripts/sizeDiv.js"></script>
 <script src="/javascripts/slider.js"></script>
 <script src="/javascripts/popup.js"></script>
+<script src="/javascripts/langData.js"></script>
+<script src="/javascripts/lang.js"></script>
