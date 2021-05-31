@@ -1,18 +1,35 @@
+if (process.env.NODE_ENV !== "production") {
+	require("dotenv").config();
+}
+
 const AppError = require("./utils/error");
 
 const express = require("express"),
-	app = express(),
-	runMongo = require("./connectionDB"),
-	path = require("path"),
-	ejsMate = require("ejs-mate"),
-	session = require("express-session"),
-	flash = require("connect-flash"),
-	passport = require("passport"),
-	LocalStrategy = require("passport-local"),
-	sanitize = require("express-mongo-sanitize"),
-	helmet = require("helmet"),
-	index = require("./routes/index"),
-	Admin = require("./models/admin");
+	mongoose = require("mongoose"),
+	mongoSanitize = require("express-mongo-sanitize");
+(path = require("path")),
+	(ejsMate = require("ejs-mate")),
+	(helmet = require("helmet")),
+	(session = require("express-session")),
+	(flash = require("connect-flash")),
+	(index = require("./routes/index"));
+
+const dbUrl = process.env.DB_URL;
+
+mongoose.connect(dbUrl, {
+	useNewUrlParser: true,
+	useCreateIndex: true,
+	useUnifiedTopology: true,
+	useFindAndModify: false,
+});
+
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", () => {
+	console.log("Database connected");
+});
+
+const app = express();
 
 app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
@@ -21,51 +38,48 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(
-	session({
-		secret: "somesecret",
-		saveUninitialized: true,
-		resave: false,
-		cookie: {
-			expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
-			maxAge: 1000 * 60 * 60 * 24 * 7,
-		},
+	mongoSanitize({
+		replaceWith: "_",
 	})
 );
 
+app.use(
+	session({
+		secret: "itwillbesomesecretinthefuture",
+		saveUninitialized: true,
+		resave: false,
+	})
+);
 app.use(flash());
-app.use(sanitize());
-app.use(passport.initialize());
-app.use(passport.session());
-passport.use(new LocalStrategy(Admin.authenticate()));
 
-passport.serializeUser(Admin.serializeUser());
-passport.deserializeUser(Admin.deserializeUser());
+app.use(helmet());
+
+const fontSrcUrls = [];
 
 app.use(
 	helmet(
 		helmet.contentSecurityPolicy({
 			directives: {
-				"default-src": ["'self'"],
-				"script-src": ["'self'"],
-				"object-src": ["'none'"],
+				defaultSrc: [],
+				connectSrc: ["'self'"],
+				scriptSrc: ["'unsafe-inline'", "'self'"],
+				styleSrc: ["'self'", "'unsafe-inline'"],
+				workerSrc: ["'self'", "blob:"],
+				childSrc: ["blob:"],
+				objectSrc: [],
+				imgSrc: [],
+				fontSrc: ["'self'", ...fontSrcUrls],
 			},
 		})
 	)
 );
 
 app.use((req, res, next) => {
-	res.locals.post = req.flash("success");
-	res.locals.nameErr = req.flash("error");
-	next();
-});
-
-//flash success
-app.use((req, res, next) => {
+	res.locals.currentUser = req.user;
 	res.locals.success = req.flash("success");
 	res.locals.error = req.flash("error");
 	next();
 });
-
 //routers
 
 app.use("/", index);
@@ -83,9 +97,8 @@ app.use((err, req, res, next) => {
 
 const start = async () => {
 	try {
-		await runMongo();
-
-		await app.listen(4200, () => console.log("Serve on 4200"));
+		const port = process.env.PORT || 4200;
+		await app.listen(port, () => console.log(`Serve on ${port}`));
 	} catch (e) {
 		console.log(e);
 	}

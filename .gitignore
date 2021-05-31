@@ -1,7 +1,10 @@
-node_modules
+*node_modules
 *.jpg
 *.png
 *.ico
 *.JPG
-.env
+*.env
 connectionDB.js
+*.idea
+bootstrap
+mystyleOld
